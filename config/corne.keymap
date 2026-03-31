@@ -27,12 +27,12 @@
 
         left_slide {
             bindings = <&kp LC(LEFT)>;
-            key-positions = <25 39>;
+            key-positions = <25 19>;
         };
 
         right_slide {
             bindings = <&kp RC(RIGHT)>;
-            key-positions = <34 38>;
+            key-positions = <34 16>;
         };
 
         sticky_shift {
@@ -79,7 +79,7 @@
 &none  &kp LEFT_BRACE        &kp PLUS     &kp UNDERSCORE  &kp DOUBLE_QUOTES  &kp BACKSLASH    &kp AT_SIGN    &kp TILDE        &kp UP_ARROW    &kp GRAVE     &kp RIGHT_BRACE        &none
 &none  &kp LEFT_BRACKET      &kp EQUAL    &kp MINUS       &kp SINGLE_QUOTE   &kp SLASH        &kp POUND      &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT     &kp RIGHT_BRACKET      &none
 &none  &kp LEFT_PARENTHESIS  &kp PERCENT  &kp DOLLAR      &kp CARET          &kp PIPE         &kp AMPERSAND  &kp EXCLAMATION  &kp ASTERISK    &kp QUESTION  &kp RIGHT_PARENTHESIS  &none
-                                          &to 0           &trans             &trans           &trans         &trans           &trans
+                                          &to 0           &trans             &mkp RCLK        &trans         &trans           &trans
             >;
         };
 
