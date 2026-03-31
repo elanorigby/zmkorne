@@ -39,6 +39,11 @@
             bindings = <&sk LEFT_SHIFT>;
             key-positions = <15 20>;
         };
+
+        vim_wq {
+            bindings = <&none>;
+            key-positions = <32 26>;
+        };
     };
 
     macros {
@@ -47,6 +52,13 @@
             #binding-cells = <0>;
             bindings = <&kp COLON &kp W &kp ENTER>;
             label = "VIM_WRITE";
+        };
+
+        vim_write_quit: vim_write_quit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp W &kp Q &kp ENTER>;
+            label = "VIM_WRITE_QUIT";
         };
     };
 
@@ -64,7 +76,7 @@
 &none  &kp TAB         &kp COMMA           &lt 2 DOT         &kp L        &kp Y          &kp F        &kp G          &lt 2 C            &kp R                &kp P            &none
 &none  &mt LEFT_ALT A  &mt LEFT_COMMAND O  &mt LEFT_SHIFT E  &kp I        &mt LCTRL U    &mt RCTRL D  &kp H          &mt RIGHT_SHIFT T  &mt RIGHT_COMMAND N  &mt RIGHT_ALT S  &none
 &none  &kp SEMI        &kp Q               &kp J             &kp K        &kp X          &kp B        &mt LC(H) M    &kp W              &kp V                &kp Z            &none
-                                           &lt 2 SPACE       &lt 1 SPACE  &mkp LCLK      &kp RETURN   &kp BACKSPACE  &lt 1 ESCAPE
+                                           &kp DELETE        &lt 1 SPACE  &mkp LCLK      &kp RETURN   &kp BACKSPACE  &lt 1 ESCAPE
             >;
         };
 
@@ -79,7 +91,7 @@
 &none  &kp LEFT_BRACE        &kp PLUS     &kp UNDERSCORE  &kp DOUBLE_QUOTES  &kp BACKSLASH    &kp AT_SIGN    &kp TILDE        &kp UP_ARROW    &kp GRAVE     &kp RIGHT_BRACE        &none
 &none  &kp LEFT_BRACKET      &kp EQUAL    &kp MINUS       &kp SINGLE_QUOTE   &kp SLASH        &kp POUND      &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT     &kp RIGHT_BRACKET      &none
 &none  &kp LEFT_PARENTHESIS  &kp PERCENT  &kp DOLLAR      &kp CARET          &kp PIPE         &kp AMPERSAND  &kp EXCLAMATION  &kp ASTERISK    &kp QUESTION  &kp RIGHT_PARENTHESIS  &none
-                                          &to 0           &trans             &mkp RCLK        &trans         &trans           &trans
+                                          &trans          &to 0              &mkp RCLK        &trans         &trans           &trans
             >;
         };
 
@@ -94,7 +106,7 @@
 &none  &sys_reset      &bt BT_PRV        &bt BT_NXT      &bt BT_SEL 0  &bt BT_SEL 1    &kp MINUS  &kp N7  &kp N8  &kp N9  &sys_reset  &none
 &none  &bt BT_CLR      &kp LEFT_COMMAND  &kp MINUS       &mkp LCLK     &mkp RCLK       &kp N0     &kp N1  &kp N2  &kp N3  &kp N0      &none
 &none  &bt BT_CLR_ALL  &trans            &kp UNDERSCORE  &mkp MB1      &mkp MB2        &kp UNDER  &kp N4  &kp N5  &kp N6  &kp SLASH   &none
-                                         &to 0           &trans        &trans          &trans     &trans  &trans
+                                         &trans          &to 0         &mkp RCLK       &trans     &trans  &trans
             >;
         };
     };
